@@ -1,17 +1,12 @@
-import numpy as np
 from datetime import datetime, timedelta
+
+import numpy as np
 
 NA = float(np.nan)
 
 FILTERS = {
-    "chart_type": [
-        "regional",
-        "viral"
-    ],
-    "period": [
-        "daily",
-        "weekly"
-    ],
+    "chart_type": ["regional", "viral"],
+    "period": ["daily", "weekly"],
     "region": [
         "global",
         "us",
@@ -75,10 +70,12 @@ FILTERS = {
         "ua",
         "uy",
         "vn",
-        "za"
-    ]
+        "za",
+    ],
 }
 
 START_DAILY = datetime(2017, 1, 1)
 START_WEEKLY = datetime(2017, 1, 5)
-END_DATE = datetime.combine(datetime.today().date(), datetime.min.time()) - timedelta(days=1)
+END_DATE = datetime.combine(datetime.today().date(), datetime.min.time()) - timedelta(
+    days=1
+)
