@@ -2,22 +2,14 @@ from __future__ import annotations
 
 import concurrent.futures
 import json
-import os
-import shutil
-from abc import ABC, abstractmethod
 from datetime import datetime, timedelta
 from operator import itemgetter
+from src.schemas.Crawler import AbstractCrawler, AbstractFactory
 
 import pandas as pd
 import requests
 
-from api.src.constants import FILTERS, NA
-
-
-class AbstractFactory(ABC):
-    @abstractmethod
-    def create_crawler(self) -> AbstractCrawler:
-        pass
+from src.constants import FILTERS, NA
 
 
 class ConcreteFactorySpotifyAPICrawler(AbstractFactory):
@@ -28,24 +20,6 @@ class ConcreteFactorySpotifyAPICrawler(AbstractFactory):
 class ConcreteFactorySpotifyChartsCrawler(AbstractFactory):
     def create_crawler(self) -> AbstractCrawler:
         return ConcreteSpotifyChartsCrawler()
-
-
-class AbstractCrawler(ABC):
-    @abstractmethod
-    def get_data(self, params):
-        pass
-
-    @abstractmethod
-    def process_data(self, data, params):
-        pass
-
-    @abstractmethod
-    def request_data(self, params):
-        pass
-
-    def clear_folder(self, path):
-        shutil.rmtree(path)
-        os.mkdir(path)
 
 
 class ConcreteSpotifyAPICrawler(AbstractCrawler):
