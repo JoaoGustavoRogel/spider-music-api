@@ -1,6 +1,7 @@
-from abc import ABC, abstractmethod
 import os
 import shutil
+from abc import ABC, abstractmethod
+
 
 class AbstractCrawler(ABC):
     @abstractmethod
