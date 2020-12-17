@@ -4,36 +4,16 @@ import concurrent.futures
 import json
 from datetime import datetime, timedelta
 from operator import itemgetter
-from src.schemas.Crawler import AbstractCrawler, AbstractFactory
 
 import pandas as pd
 import requests
-
 from src.constants import FILTERS, NA
-
-
-class ConcreteFactorySpotifyAPICrawler(AbstractFactory):
-    def create_crawler(self) -> AbstractCrawler:
-        return ConcreteSpotifyAPICrawler()
+from src.schemas.Crawler import AbstractCrawler, AbstractFactory
 
 
 class ConcreteFactorySpotifyChartsCrawler(AbstractFactory):
     def create_crawler(self) -> AbstractCrawler:
         return ConcreteSpotifyChartsCrawler()
-
-
-class ConcreteSpotifyAPICrawler(AbstractCrawler):
-    def get_data(self, params):
-        return "Teste get_data api"
-
-    def process_data(self, data, params):
-        return "Teste process_data api"
-
-    def request_data(self, params):
-        return "Teste request_data api"
-
-    def process_row(self, row):
-        return "Teste process_row api"
 
 
 class ConcreteSpotifyChartsCrawler(AbstractCrawler):
@@ -178,6 +158,6 @@ def client_code(factory: AbstractFactory) -> None:
 
 
 if __name__ == "__main__":
-    print("Testando o crawler dos charts")
+    print("Testando o crawler Spotify Charts")
     client_code(ConcreteFactorySpotifyChartsCrawler())
 """
