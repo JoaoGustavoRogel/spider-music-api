@@ -1,0 +1,1 @@
+DELETE FROM C214.tracks WHERE C214.tracks.track_id = %s;

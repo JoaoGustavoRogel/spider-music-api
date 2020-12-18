@@ -12,7 +12,7 @@ router = APIRouter()
 mysql_db = MySql.instance()
 
 
-@router.get("/chart_crawler_query")
+@router.get("/crawler_query")
 def get_data_chart(start_date: str, end_date: str):
     try:
         start_date = datetime.strptime(start_date, "%Y-%m-%d")
@@ -41,7 +41,7 @@ def get_data_chart(start_date: str, end_date: str):
 
     return {"data": collected_data}
 
-@router.get("/chart_insert_db")
+@router.get("/insert_db")
 def insert_data_db(start_date: str, end_date: str):
     try:
         start_date = datetime.strptime(start_date, "%Y-%m-%d")
@@ -76,7 +76,7 @@ def insert_data_db(start_date: str, end_date: str):
 
     return {"message": "Sucess in insert, welcome data!"}
 
-@router.get("/chart_query_db")
+@router.get("/query_db")
 def query_data_db(start_date: str, end_date: str):
     try:
         datetime.strptime(start_date, "%Y-%m-%d")
@@ -91,7 +91,7 @@ def query_data_db(start_date: str, end_date: str):
 
     return {"fields": fields, "count_data": len(res_query), "data": res_query}
 
-@router.get("/chart_delete_db")
+@router.get("/delete_db")
 def delete_data_db(start_date: str, end_date: str):
     try:
         datetime.strptime(start_date, "%Y-%m-%d")
@@ -104,7 +104,7 @@ def delete_data_db(start_date: str, end_date: str):
 
     return {"message": "Sucess, good bye data!"}
 
-@router.get("/chart_update_db")
+@router.get("/update_db")
 def update_data_db(start_date: str, end_date: str):
     try:
         datetime.strptime(start_date, "%Y-%m-%d")
