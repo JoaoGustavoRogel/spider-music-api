@@ -1,0 +1,1 @@
+DELETE FROM C214.albums WHERE C214.albums.album_id = %s;
