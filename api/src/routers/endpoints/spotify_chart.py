@@ -9,7 +9,6 @@ from src.models.MySql import MySql
 
 
 router = APIRouter()
-mysql_db = MySql.instance()
 
 
 @router.get("/crawler_query")
@@ -43,6 +42,7 @@ def get_data_chart(start_date: str, end_date: str):
 
 @router.get("/insert_db")
 def insert_data_db(start_date: str, end_date: str):
+    mysql_db = MySql.instance()
     try:
         start_date = datetime.strptime(start_date, "%Y-%m-%d")
         end_date = datetime.strptime(end_date, "%Y-%m-%d")
@@ -78,6 +78,7 @@ def insert_data_db(start_date: str, end_date: str):
 
 @router.get("/query_db")
 def query_data_db(start_date: str, end_date: str):
+    mysql_db = MySql.instance()
     try:
         datetime.strptime(start_date, "%Y-%m-%d")
         datetime.strptime(end_date, "%Y-%m-%d")
@@ -93,6 +94,7 @@ def query_data_db(start_date: str, end_date: str):
 
 @router.get("/delete_db")
 def delete_data_db(start_date: str, end_date: str):
+    mysql_db = MySql.instance()
     try:
         datetime.strptime(start_date, "%Y-%m-%d")
         datetime.strptime(end_date, "%Y-%m-%d")
@@ -106,6 +108,7 @@ def delete_data_db(start_date: str, end_date: str):
 
 @router.get("/update_db")
 def update_data_db(start_date: str, end_date: str):
+    mysql_db = MySql.instance()
     try:
         datetime.strptime(start_date, "%Y-%m-%d")
         datetime.strptime(end_date, "%Y-%m-%d")
