@@ -1,9 +1,9 @@
 import os
 
 import mysql.connector
+
 # Debug
 from dotenv import load_dotenv
-
 load_dotenv()
 # End Debug
 
@@ -67,6 +67,16 @@ class MySql:
 
         tidy_results = [item for item in raw_results]
         return tidy_results
+
+    def delete_data(self, query_file, parameters=None):
+        query_sql = None
+        with open(query_file, "r") as file_sql:
+            query_sql = file_sql.read()
+
+        tidy_parameters = tuple(parameters)
+
+        self.__cursor.execute(query_sql, tidy_parameters)
+        self.__cnx.commit()
 
 
 if __name__ == "__main__":
