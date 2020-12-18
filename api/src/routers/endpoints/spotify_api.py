@@ -104,5 +104,27 @@ def delete_album_db(id: str):
 def delete_track_db(id: str):
     return __delete_data_from_db("src/sql/delete_track_api.sql", id)
 
-# def __update_data_from_db(query_type)
+def __update_data_from_db(query_type, id):
+    delete_file = f"src/sql/delete_{query_type}_api.sql"
+    __delete_data_from_db(delete_file, id)
 
+    if query_type == "artist":
+        insert_artist_db(id)
+    elif query_type == "album":
+        insert_album_db(id)
+    elif query_type == "track":
+        insert_track_db(id)
+
+    return {"message": "Sucess, welcome new data!"}
+
+@router.get("/update_track")
+def __update_track_db(id: str):
+    return __update_data_from_db("track", id)
+
+@router.get("/update_album")
+def __update_album_db(id: str):
+    return __update_data_from_db("album", id)
+
+@router.get("/update_artist")
+def __update_artist_db(id: str):
+    return __update_data_from_db("artist", id)
