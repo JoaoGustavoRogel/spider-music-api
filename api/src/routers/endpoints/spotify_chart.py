@@ -103,3 +103,37 @@ def delete_data_db(start_date: str, end_date: str):
     mysql_db.delete_data("src/sql/delete_spotify_chart.sql", parameters)
 
     return {"message": "Sucess, good bye data!"}
+
+@router.get("/chart_update_db")
+def update_data_db(start_date: str, end_date: str):
+    try:
+        datetime.strptime(start_date, "%Y-%m-%d")
+        datetime.strptime(end_date, "%Y-%m-%d")
+    except Exception:
+        raise HTTPException(status_code=201, detail="Invalid date format. Must be: YYYY-MM-DD")
+
+    parameters = [start_date, end_date]
+    mysql_db.delete_data("src/sql/delete_spotify_chart.sql", parameters)
+    
+    factory = ConcreteFactorySpotifyChartsCrawler()
+    crawler = factory.create_crawler()
+    path = "outputs/"
+
+    data_to_extract = {
+        "start_date": datetime.strptime(start_date, "%Y-%m-%d"),
+        "end_date": datetime.strptime(end_date, "%Y-%m-%d"),
+        "path": path,
+    }
+
+    try:
+        shutil.rmtree(path)
+    except Exception:
+        pass
+        
+    os.mkdir(path)
+    collected_data = crawler.get_data(data_to_extract)
+    shutil.rmtree(path)
+
+    mysql_db.insert_data_list("src/sql/insert_spotify_chart.sql", collected_data)
+
+    return {"message": "Sucess, welcome new data!"}
