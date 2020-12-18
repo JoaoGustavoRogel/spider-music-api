@@ -1,0 +1,1 @@
+DELETE FROM C214.artists WHERE C214.artists.artist_id = %s;
