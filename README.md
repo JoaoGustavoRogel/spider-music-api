@@ -6,13 +6,7 @@
 
 O projeto **Spider Music** foi desenvolvido como projeto final para a disciplina de *Engenharia de Software (C214)* no *Instituto Nacional de Telecomunicações (INATEL)*, aplicando os conceitos aprendidos na disciplina, como o uso de gerenciadores de dependências, padrões de projeto, testes de classes e testes mock, bem como outros conceitos abordados em outras disciplinas, como POO e integração com bancos de dados.
 
-Foram utilizadas as seguintes ferramentas:
-
-* [Python (Anaconda)](https://www.anaconda.com/products/individual)
-* [MySQL](https://www.mysql.com/)
-* [Visual Studio Code](https://code.visualstudio.com/)
-
-O projeto **Spider Music** é uma api que permite a consulta de dados do serviço de streaming *[Spotify](https://www.spotify.com/br/)*, e retorna dados de charts e informações detalhadas sobre músicas, álbuns e artistas. O uso da api se dá através de um endpoint, que permite a realização de consultas e a interação com o banco de dados, permitindo inserções, consultas, updates e remoções.
+O **Spider Music** consiste de uma api que permite a consulta de dados do serviço de streaming *[Spotify](https://www.spotify.com/br/)*, e retorna dados de charts e informações detalhadas sobre músicas, álbuns e artistas. O uso da api se dá através de um endpoint, que permite a realização de consultas e a interação com o banco de dados, permitindo inserções, consultas, updates e remoções.
 
 Os dados coletados podem então ser utilizados em outros projetos, como dashboards apresentando os charts e algoritmos capazes de realizar previsões de como um determinado lançamento pode se comportar no futuro.
 
@@ -50,6 +44,15 @@ As bibliotecas utilizadas no projeto foram:
 * [python-dotenv](https://pypi.org/project/python-dotenv/)
 * [requests](https://pypi.org/project/requests/)
 * [spotipy](https://pypi.org/project/spotipy/)
+
+## Ferramentas
+
+* [Python (Anaconda)](https://www.anaconda.com/products/individual)
+* [Pytest](https://docs.pytest.org/en/stable/)
+* [Unittest](https://docs.python.org/3/library/unittest.html)
+* [Mock](https://docs.python.org/3/library/unittest.mock.html)
+* [MySQL](https://www.mysql.com/)
+* [Visual Studio Code](https://code.visualstudio.com/)
 
 ## Como Usar
 
