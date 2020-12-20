@@ -24,7 +24,7 @@ A coleta dos dados se dá por meio de dois crawlers, um deles responsável pelos
 
 A segunda área é a responsável por servir como interface de comunicação com o banco de dados. Ela é responsável por gerenciar as inserções, buscas, alterações e remoções de dados de forma automática, bastando apenas que o usuário faça a chamada do endpoint responsável pela ação desejada. 
 
-Por fim, os endpoints são responsáveis por facilitar o uso da api, possibilitando que o usuário não precise executar o projeto em sua máquina para realizar as consultas. Os endpoints foram desenvolvidos com a tecnologia REST, e permitem o uso das funcionalidades a partir de requisições de urls específicas para cada tipo de ação. Essas requisições exigem parâmetros que indicam o que detalhes a serem usados na função desejada, como por exemplo, indicando qual deve ser a faixa buscada ou qual é o período e localidade dos charts desejados.
+Por fim, os endpoints são responsáveis por facilitar o uso da api, permitindo que o usuário não precise executar o projeto em sua máquina para realizar as consultas. Os endpoints foram desenvolvidos com a tecnologia REST, e permitem o uso das funcionalidades a partir de requisições de URLs específicas para cada tipo de ação. Essas requisições exigem parâmetros que indicam detalhes que serão utilizados na função desejada, como por exemplo, qual deve ser a música ou artista buscado ou qual é o período e localidade dos charts desejados.
 
 ## Funcionalidades
 
@@ -36,7 +36,7 @@ Estão disponíveis as seguintes funções:
 * Inserção dos dados coletados no banco de dados;
 * Busca dos dados presentes no banco de dados;
 * Update dos dados presentes no banco de dados;
-* Apagar dados presentes no banco de dados.
+* Remoção dos dados presentes no banco de dados.
 
 ## Bibliotecas
 
