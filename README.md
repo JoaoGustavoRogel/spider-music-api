@@ -53,7 +53,7 @@ As bibliotecas utilizadas no projeto foram:
 
 ## Como Usar
 
-O projeto possui os seguintes requisitos
+O projeto possui os seguintes requisitos:
 
 * Python >= 3.7 (Distribuição Recomendada: Anaconda)
 * MySQL Server
