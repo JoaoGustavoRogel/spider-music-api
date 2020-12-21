@@ -6,13 +6,7 @@
 
 O projeto **Spider Music** foi desenvolvido como projeto final para a disciplina de *Engenharia de Software (C214)* no *Instituto Nacional de Telecomunicações (INATEL)*, aplicando os conceitos aprendidos na disciplina, como o uso de gerenciadores de dependências, padrões de projeto, testes de classes e testes mock, bem como outros conceitos abordados em outras disciplinas, como POO e integração com bancos de dados.
 
-Foram utilizadas as seguintes ferramentas:
-
-* [Python (Anaconda)](https://www.anaconda.com/products/individual)
-* [MySQL](https://www.mysql.com/)
-* [Visual Studio Code](https://code.visualstudio.com/)
-
-O projeto **Spider Music** é uma api que permite a consulta de dados do serviço de streaming *[Spotify](https://www.spotify.com/br/)*, e retorna dados de charts e informações detalhadas sobre músicas, álbuns e artistas. O uso da api se dá através de um endpoint, que permite a realização de consultas e a interação com o banco de dados, permitindo inserções, consultas, updates e remoções.
+O **Spider Music** consiste de uma api que permite a consulta de dados do serviço de streaming *[Spotify](https://www.spotify.com/br/)*, e retorna dados de charts e informações detalhadas sobre músicas, álbuns e artistas. O uso da api se dá através de um endpoint, que permite a realização de consultas e a interação com o banco de dados, permitindo inserções, consultas, updates e remoções.
 
 Os dados coletados podem então ser utilizados em outros projetos, como dashboards apresentando os charts e algoritmos capazes de realizar previsões de como um determinado lançamento pode se comportar no futuro.
 
@@ -24,7 +18,7 @@ A coleta dos dados se dá por meio de dois crawlers, um deles responsável pelos
 
 A segunda área é a responsável por servir como interface de comunicação com o banco de dados. Ela é responsável por gerenciar as inserções, buscas, alterações e remoções de dados de forma automática, bastando apenas que o usuário faça a chamada do endpoint responsável pela ação desejada. 
 
-Por fim, os endpoints são responsáveis por facilitar o uso da api, possibilitando que o usuário não precise executar o projeto em sua máquina para realizar as consultas. Os endpoints foram desenvolvidos com a tecnologia REST, e permitem o uso das funcionalidades a partir de requisições de urls específicas para cada tipo de ação. Essas requisições exigem parâmetros que indicam o que detalhes a serem usados na função desejada, como por exemplo, indicando qual deve ser a faixa buscada ou qual é o período e localidade dos charts desejados.
+Por fim, os endpoints são responsáveis por facilitar o uso da api, permitindo que o usuário não precise executar o projeto em sua máquina para realizar as consultas. Os endpoints foram desenvolvidos com a tecnologia REST, e permitem o uso das funcionalidades a partir de requisições de URLs específicas para cada tipo de ação. Essas requisições exigem parâmetros que indicam detalhes que serão utilizados na função desejada, como por exemplo, qual deve ser a música ou artista buscado ou qual é o período e localidade dos charts desejados.
 
 ## Funcionalidades
 
@@ -36,7 +30,7 @@ Estão disponíveis as seguintes funções:
 * Inserção dos dados coletados no banco de dados;
 * Busca dos dados presentes no banco de dados;
 * Update dos dados presentes no banco de dados;
-* Apagar dados presentes no banco de dados.
+* Remoção dos dados presentes no banco de dados.
 
 ## Bibliotecas
 
@@ -51,9 +45,18 @@ As bibliotecas utilizadas no projeto foram:
 * [requests](https://pypi.org/project/requests/)
 * [spotipy](https://pypi.org/project/spotipy/)
 
+## Ferramentas
+
+* [Python (Anaconda)](https://www.anaconda.com/products/individual)
+* [Pytest](https://docs.pytest.org/en/stable/)
+* [Unittest](https://docs.python.org/3/library/unittest.html)
+* [Mock](https://docs.python.org/3/library/unittest.mock.html)
+* [MySQL](https://www.mysql.com/)
+* [Visual Studio Code](https://code.visualstudio.com/)
+
 ## Como Usar
 
-O projeto possui os seguintes requisitos
+O projeto possui os seguintes requisitos:
 
 * Python >= 3.7 (Distribuição Recomendada: Anaconda)
 * MySQL Server
