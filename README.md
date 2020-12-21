@@ -65,3 +65,38 @@ Para executar a api:
   uvicorn src.main:app --reload --workers 1 --host 0.0.0.0 --port 8000
 ```
 Não esquecer de entrar dentro da pasta `api`.
+
+Após executar o comando acima, a api está pronta para o uso. Os seguintes endpoints estão disponíveis:
+
+```
+  0.0.0.0:8000/spotify/chart/crawler_query
+  0.0.0.0:8000/spotify/chart/insert_db
+  0.0.0.0:8000/spotify/chart/query_db
+  0.0.0.0:8000/spotify/chart/delete_db
+  0.0.0.0:8000/spotify/chart/update_db
+  0.0.0.0:8000/spotify/api/crawler_track
+  0.0.0.0:8000/spotify/api/insert_track
+  0.0.0.0:8000/spotify/api/delete_track
+  0.0.0.0:8000/spotify/api/update_track
+  0.0.0.0:8000/spotify/api/crawler_album
+  0.0.0.0:8000/spotify/api/insert_album
+  0.0.0.0:8000/spotify/api/delete_album
+  0.0.0.0:8000/spotify/api/update_album
+  0.0.0.0:8000/spotify/api/crawler_artist
+  0.0.0.0:8000/spotify/api/insert_artist
+  0.0.0.0:8000/spotify/api/delete_artist
+  0.0.0.0:8000/spotify/api/update_artist
+```
+
+Para utilizar os endpoins, é necessário fornecer alguns parâmetros. Os endpoints que coletam dados de charts precisam de dois parâmetros: `start_date` e `end_date` (a data de início e a data do fim da pesquisa, respectivamente), que são passadas no formato `YYYY-MM-DD`. Já os endpoints que coletam os dados diretamente do Spotify requerem apenas um parâmetro, o `id`, que é uma string contendo o identificador único que indica qual é a música, álbum ou artista.
+
+Seguem abaixo dois exemplos de uso:
+
+```
+  0.0.0.0:8000/spotify/chart/crawler_query?start_date=2020-12-01&end_date=2020-12-10
+
+  0.0.0.0:8000/spotify/api/crawler_track?id=1ayaOin9hxCtyhg4UsBTpg
+```
+
+A resposta da requisição em ambos os casos é um json, contendo o campo `data`, que possui os dados desejados.
+
