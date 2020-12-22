@@ -9,10 +9,6 @@ from src.routers.endpoints import spotify_chart
 
 
 class TestSpotifyChartsRouter(unittest.TestCase):
-    @classmethod
-    def setUpClass(cls):
-        cls.mock_mysql = mock.patch.object(spotify_chart, "mysql_db", return_value = "instancia_criada")
-
     @mock.patch("src.models.SpotifyCrawler.ConcreteSpotifyChartsCrawler")
     def test_get_data_chart(self, mock_crawler):
         mock_crawler().get_data.return_value = "testando o endpoint"
