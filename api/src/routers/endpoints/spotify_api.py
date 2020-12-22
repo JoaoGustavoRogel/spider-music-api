@@ -9,11 +9,10 @@ from src.models.MySql import MySql
 
 
 router = APIRouter()
-mysql_db = MySql.instance()
-factory = ConcreteFactorySpotifyAPICrawler()
 
 
 def __query_data_crawler(query_type, query_id):
+    factory = ConcreteFactorySpotifyAPICrawler()
     crwl = factory.create_crawler()
     query_data = {
         "query_type": query_type,
@@ -43,6 +42,7 @@ def query_crawler_album_by_id(id: str):
 
 @router.get("/insert_album")
 def insert_album_db(id: str):
+    mysql_db = MySql.instance()
     collected_data = __query_data_crawler("album_by_id", id)
 
     fields = ["album_id", "album_name", "album_url", "total_tracks", "release_date", "artist_id", "popularity", "label"]    
@@ -58,6 +58,7 @@ def insert_album_db(id: str):
 
 @router.get("/insert_track")
 def insert_track_db(id: str):
+    mysql_db = MySql.instance()
     collected_data = __query_data_crawler("track_by_id", id)
 
     fields = ["track_id", "track_name", "track_url", "disc_number", "duration_ms", "artist_id", "track_number", "popularity", "album_id"]
@@ -73,6 +74,7 @@ def insert_track_db(id: str):
 
 @router.get("/insert_artist")
 def insert_artist_db(id: str):
+    mysql_db = MySql.instance()
     collected_data = __query_data_crawler("artist_by_id", id)
 
     fields = ["artist_id", "artist_name", "artist_url", "track_number", "disc_number", "popularity", "followers"]
@@ -87,6 +89,7 @@ def insert_artist_db(id: str):
     return {"message": "Sucess, welcome data!"}
 
 def __delete_data_from_db(sql_file, id):
+    mysql_db = MySql.instance()
     params = [id]
     mysql_db.delete_data(sql_file, params)
 
