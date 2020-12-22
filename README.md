@@ -1,7 +1,7 @@
 # Spider Music
 
 <p align="center">
-  <img src="docs/images/logo.png" weight="300px"/>
+  <img src="docs/images/logo.png" width="300px"/>
 </p>
 
 ![Python](https://img.shields.io/badge/Python-%3E%3D%203.7-blue)
