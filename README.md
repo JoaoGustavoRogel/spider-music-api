@@ -67,6 +67,12 @@ O projeto possui os seguintes requisitos:
 * MySQL Server
 * Bibliotecas encontradas no requirements.txt
 
+Para instalar todas as dependências:
+
+```
+  pip install -r api/requirements.txt
+```
+
 Para executar a api:
 
 ```
@@ -96,7 +102,7 @@ Após executar o comando acima, a api está pronta para o uso. Os seguintes endp
   0.0.0.0:8000/spotify/api/update_artist
 ```
 
-Para utilizar os endpoins, é necessário fornecer alguns parâmetros. Os endpoints que coletam dados de charts precisam de dois parâmetros: `start_date` e `end_date` (a data de início e a data do fim da pesquisa, respectivamente), que são passadas no formato `YYYY-MM-DD`. Já os endpoints que coletam os dados diretamente do Spotify requerem apenas um parâmetro, o `id`, que é uma string contendo o identificador único que indica qual é a música, álbum ou artista.
+Para utilizar os endpoints, é necessário fornecer alguns parâmetros. Os endpoints que coletam dados de charts precisam de dois parâmetros: `start_date` e `end_date` (a data de início e a data do fim da pesquisa, respectivamente), que são passadas no formato `YYYY-MM-DD`. Já os endpoints que coletam os dados diretamente do Spotify requerem apenas um parâmetro, o `id`, que é uma string contendo o identificador único que indica qual é a música, álbum ou artista.
 
 Seguem abaixo dois exemplos de uso:
 
