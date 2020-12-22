@@ -1,5 +1,7 @@
 # Spider Music
 
+![Python](https://img.shields.io/badge/Python-%3E%3D%203.7-blue)
+![MIT](https://img.shields.io/badge/license-MIT-green)
 ![Continuous Integration](https://github.com/JoaoGustavoRogel/api-data-c214/workflows/Continuous%20Integration/badge.svg)
 
 ## Descrição
