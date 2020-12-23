@@ -144,20 +144,3 @@ class ConcreteSpotifyChartsCrawler(AbstractCrawler):
             raise Exception(
                 f"Não foi possível processar os dados para os seguintes parâmetros: {params}\n{e}"
             )
-
-
-"""
-# Exemplo do funcionamento
-def client_code(factory: AbstractFactory) -> None:
-    crwl = factory.create_crawler()
-    data = crwl.get_data({
-        "start_date": datetime(2020, 12, 10),
-        "end_date": datetime(2020, 12, 13),
-        "path": "outputs"
-    })
-
-
-if __name__ == "__main__":
-    print("Testando o crawler Spotify Charts")
-    client_code(ConcreteFactorySpotifyChartsCrawler())
-"""
